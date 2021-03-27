@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_movie_app/components/components.dart';
 import 'package:flutter_movie_app/components/detail_title_card.dart';
+import 'package:flutter_movie_app/components/title_widget.dart';
 
 class DetailScreen extends StatelessWidget {
   @override
@@ -44,10 +45,18 @@ class DetailScreen extends StatelessWidget {
                     DetailTitleCard(),
                     Container(
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          TitleWidget(
+                            title: '개요',
+                          ),
                           Text(
-                            'data',
-                            style: kTitleTextStyle,
+                              '지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말'),
+                          TitleWidget(
+                            title: '주요 출연진',
+                          ),
+                          TitleWidget(
+                            title: '리뷰',
                           ),
                         ],
                       ),
