@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movie_app/components/bot_movie_widget.dart';
+import 'package:flutter_movie_app/components/components.dart';
 import 'package:flutter_movie_app/components/now_playing_card.dart';
 
 class ListScreen extends StatelessWidget {
@@ -17,8 +18,7 @@ class ListScreen extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       '현재 상영중',
-                      style: TextStyle(
-                          fontSize: 20.0, fontWeight: FontWeight.w700),
+                      style: kTitleTextStyle,
                     ),
                     Container(
                       height: 200.0,
