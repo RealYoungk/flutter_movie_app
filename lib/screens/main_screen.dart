@@ -6,25 +6,33 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.fromLTRB(16, 43, 0, 0),
-              child: Text(
+        body: Container(
+          margin: EdgeInsets.fromLTRB(16.0, 16.0, 0, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
                 '현재 상영중',
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w700),
               ),
-            ),
-            Row(
-              children: [
-                NowPlayingCard(),
-                NowPlayingCard(),
-                NowPlayingCard(),
-                NowPlayingCard(),
-              ],
-            ),
-          ],
+              Container(
+                height: 200.0,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    NowPlayingCard(),
+                    NowPlayingCard(),
+                    NowPlayingCard(),
+                    NowPlayingCard(),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+              Text('data'),
+            ],
+          ),
         ),
       ),
     );
