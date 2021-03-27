@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_app/components/components.dart';
 import 'package:flutter_movie_app/components/now_playing_card.dart';
+import 'package:flutter_movie_app/components/upcomming_card.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -9,28 +11,45 @@ class MainScreen extends StatelessWidget {
         body: Container(
           margin: EdgeInsets.fromLTRB(16.0, 16.0, 0, 0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                '현재 상영중',
-                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w700),
-              ),
-              Container(
-                height: 200.0,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    NowPlayingCard(),
-                    NowPlayingCard(),
-                    NowPlayingCard(),
-                    NowPlayingCard(),
-                  ],
-                ),
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    '현재 상영중',
+                    style:
+                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.w700),
+                  ),
+                  Container(
+                    height: 200.0,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        NowPlayingCard(),
+                        NowPlayingCard(),
+                        NowPlayingCard(),
+                        NowPlayingCard(),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 30.0,
               ),
-              Text('data'),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    '개봉 예정',
+                    style:
+                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.w700),
+                  ),
+                  UpcommingCard(),
+                  UpcommingCard(),
+                  UpcommingCard(),
+                ],
+              ),
             ],
           ),
         ),
