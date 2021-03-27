@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_movie_app/components/bot_movie_widget.dart';
 import 'package:flutter_movie_app/components/now_playing_card.dart';
 
-class MainScreen extends StatelessWidget {
+class ListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

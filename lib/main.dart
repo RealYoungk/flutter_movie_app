@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movie_app/screens/main_screen.dart';
+import 'package:flutter_movie_app/screens/detail_screen.dart';
+import 'package:flutter_movie_app/screens/list_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      home: MainScreen(),
+      // home: ListScreen(),
+      home: DetailScreen(),
     );
   }
 }
