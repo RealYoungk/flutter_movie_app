@@ -22,6 +22,7 @@ class ListScreen extends StatelessWidget {
                     ),
                     Container(
                       height: 200.0,
+                      padding: EdgeInsets.zero,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'components.dart';
 
 class DetailTitleCard extends StatelessWidget {
@@ -10,7 +9,7 @@ class DetailTitleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200.0,
+      height: 160.0,
       color: Colors.transparent,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

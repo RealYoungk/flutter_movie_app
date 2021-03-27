@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_movie_app/components/circle_avatar_card.dart';
 import 'package:flutter_movie_app/components/components.dart';
 import 'package:flutter_movie_app/components/detail_title_card.dart';
+import 'package:flutter_movie_app/components/review_card.dart';
 import 'package:flutter_movie_app/components/title_widget.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -41,12 +42,12 @@ class DetailScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.fromLTRB(16.0, 118.0, 16.0, 0),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     DetailTitleCard(),
                     Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      height: 500,
+                      child: ListView(
+                        padding: EdgeInsets.zero,
                         children: [
                           TitleWidget(
                             title: '개요',
@@ -75,38 +76,78 @@ class DetailScreen extends StatelessWidget {
                           Container(
                             child: Column(
                               children: [
-                                Container(
-                                  padding: EdgeInsets.all(
-                                    8.0,
-                                  ),
-                                  height: 71,
-                                  decoration: BoxDecoration(
-                                    color: Colors.transparent,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(
-                                        8.0,
-                                      ),
-                                    ),
-                                    border: Border.all(
-                                      color: Colors.black12,
-                                      width: 3.0,
-                                    ),
-                                  ),
-                                  child: Text('개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리'),
+                                ReviewCard(
+                                  review:
+                                      '개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리',
                                 ),
-                                // Container(
-                                //   width: 288.0,
-                                //   height: 71.0,
-                                //   color: Colors.grey,
-                                // ),
+                                ReviewCard(
+                                  review:
+                                      '개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리',
+                                ),
+                                ReviewCard(
+                                  review:
+                                      '개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리',
+                                ),
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
                   ],
                 ),
+
+                // child: Column(
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   children: [
+                //     DetailTitleCard(),
+                //     Container(
+                //       child: Column(
+                //         crossAxisAlignment: CrossAxisAlignment.start,
+                //         children: [
+                //           TitleWidget(
+                //             title: '개요',
+                //           ),
+                //           Text(
+                //               '지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말지구종말'),
+                //           TitleWidget(
+                //             title: '주요 출연진',
+                //           ),
+                //           Row(
+                //             children: [
+                //               CircleAvatarCard(
+                //                 name: '김수로',
+                //               ),
+                //               CircleAvatarCard(
+                //                 name: '김여정',
+                //               ),
+                //               CircleAvatarCard(
+                //                 name: '김영진',
+                //               ),
+                //             ],
+                //           ),
+                //           TitleWidget(
+                //             title: '리뷰',
+                //           ),
+                //           Container(
+                //             child: Column(
+                //               children: [
+                //                 ReviewCard(
+                //                   review:
+                //                       '개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리',
+                //                 ),
+                //                 ReviewCard(
+                //                   review:
+                //                       '개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리개꿀잼따리',
+                //                 ),
+                //               ],
+                //             ),
+                //           )
+                //         ],
+                //       ),
+                //     ),
+                //   ],
+                // ),
               ),
             ],
           ),
