@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ReviewCard extends StatelessWidget {
   final String review;
-  ReviewCard({this.review});
+  final String author;
+  ReviewCard({this.review, this.author});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,12 @@ class ReviewCard extends StatelessWidget {
         children: [
           Expanded(child: Text(review)),
           Container(
-            child: Text('작가'),
+            child: Text(
+              author,
+              style: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
             alignment: Alignment.bottomRight,
           ),
         ],

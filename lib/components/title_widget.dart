@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'components.dart';
+import 'constants.dart';
 
 class TitleWidget extends StatelessWidget {
-  final title;
+  final String title;
   TitleWidget({this.title});
 
   @override

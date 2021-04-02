@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      // home: ListScreen(),
-      home: DetailScreen(),
+      home: ListScreen(),
+      // home: DetailScreen(),
     );
   }
 }

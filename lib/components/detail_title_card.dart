@@ -1,10 +1,42 @@
 import 'package:flutter/material.dart';
-import 'components.dart';
+import 'package:flutter_movie_app/services/star.dart';
+import 'constants.dart';
 
 class DetailTitleCard extends StatelessWidget {
-  const DetailTitleCard({
-    Key key,
-  }) : super(key: key);
+  final String image;
+  final String title;
+  final bool adult;
+  final List genres;
+  final String releaseDate;
+  final int voteAverage;
+  final Star star = Star();
+
+  DetailTitleCard(
+      {this.image,
+      this.title,
+      this.adult,
+      this.genres,
+      this.releaseDate,
+      this.voteAverage});
+
+  Widget returnGenres() {
+    List<Widget> list = [];
+    for (var genre in genres) {
+      list.add(
+        Text(
+          '${genre['name']} ',
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 13.0,
+            color: Colors.grey,
+          ),
+        ),
+      );
+    }
+    return Row(
+      children: list,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +47,7 @@ class DetailTitleCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.network(
-            'https://images.chosun.com/resizer/zi79UJVrltMbR26raUDUXS2FcN0=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/BTPIRBOSBVT7GEVINZLYBL7A4Y.jpg',
+            image,
             height: 159.0,
             width: 104.0,
           ),
@@ -23,10 +55,11 @@ class DetailTitleCard extends StatelessWidget {
             margin: EdgeInsets.only(left: 16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(height: 60.0),
                 Text(
-                  'data',
+                  title,
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 12.0,
@@ -45,24 +78,17 @@ class DetailTitleCard extends StatelessWidget {
                       ),
                       border: Border.all(color: Colors.red)),
                   child: Text(
-                    'Adult',
+                    adult ? 'adult' : 'all',
                     style: TextStyle(
-                      fontSize: 8.0,
+                      fontSize: 9.0,
                       color: Colors.red,
                     ),
                   ),
                 ),
-                Text('감동, 멜로'),
-                Text('2021-03-27   발매'),
-                Row(
-                  children: [
-                    ActiveStar,
-                    ActiveStar,
-                    ActiveStar,
-                    ActiveStar,
-                    ActiveStar,
-                  ],
-                )
+                returnGenres(),
+                // Text(genres[0]['name']),
+                Text('$releaseDate 발매'),
+                star.returnStars(this.voteAverage),
               ],
             ),
           ),
